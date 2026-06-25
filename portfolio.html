@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Work — Parallel Global</title>
+  <meta name="description" content="Selected work by Parallel Global — Shopify stores, brand identities, website design, and 3D product visualization for e-commerce brands worldwide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cobalt: #1A1AFF;
+      --cobalt-dim: #EEF0FF;
+      --cobalt-border: #c5caff;
+      --text-primary: #0f0f0f;
+      --text-secondary: #555;
+      --text-tertiary: #999;
+      --bg: #fff;
+      --bg-surface: #f7f7f7;
+      --border: rgba(0,0,0,0.1);
+      --border-hover: #1A1AFF;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 0.5px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--cobalt);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+
+    .nav-cta {
+      font-size: 13px;
+      color: var(--cobalt);
+      text-decoration: none;
+      border: 0.5px solid var(--cobalt);
+      padding: 6px 16px;
+      border-radius: 100px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--cobalt); color: #fff; }
+
+    /* MAIN */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    /* HEADER */
+    .page-header { margin-bottom: 3.5rem; }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .page-title em {
+      color: var(--cobalt);
+      font-style: normal;
+    }
+
+    .page-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 560px;
+    }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 4rem;
+    }
+
+    .stat {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--cobalt);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    /* SECTION LABEL */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 1.5rem;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    /* PROJECT GRID */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    /* CARD VISUALS */
+    .card-visual {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* ORVE visual */
+    .orve-bg { background: #0a0a0a; }
+
+    .orve-inner { text-align: center; }
+
+    .orve-wordmark {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      color: #f5f0e8;
+      line-height: 1;
+    }
+
+    .orve-sub {
+      font-size: 8px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #7a7060;
+      margin-top: 10px;
+    }
+
+    .card-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+
+    .badge-dark {
+      background: rgba(245,240,232,0.07);
+      border: 0.5px solid rgba(245,240,232,0.14);
+      color: #7a7060;
+    }
+
+    /* Parallel Global visual */
+    .pg-bg { background: #efefef; }
+
+    .pg-inner { text-align: center; }
+
+    .pg-wordmark {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--cobalt);
+    }
+
+    .pg-tagline {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #999;
+      margin-top: 7px;
+    }
+
+    .pg-rule-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .pg-rule {
+      height: 2px;
+      border-radius: 1px;
+      background: var(--cobalt);
+    }
+
+    /* 3D visual */
+    .td-bg { background: #0d0d14; }
+
+    .td-rings {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(100,100,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .td-ring-mid {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 1px solid rgba(100,100,255,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .td-core {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #3a3aff;
+      opacity: 0.9;
+    }
+
+    .td-label {
+      position: absolute;
+      bottom: 14px;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(140,140,255,0.5);
+    }
+
+    .badge-dim {
+      background: rgba(100,100,255,0.08);
+      border: 0.5px solid rgba(100,100,255,0.18);
+      color: rgba(140,140,255,0.6);
+    }
+
+    /* CARD BODY */
+    .card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-client {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 5px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      border: 0.5px solid var(--border);
+    }
+
+    .tag-blue {
+      background: var(--cobalt-dim);
+      color: var(--cobalt);
+      border-color: var(--cobalt-border);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12.5px;
+      color: var(--cobalt);
+      font-weight: 500;
+    }
+
+    .card-link svg {
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* CAPABILITIES */
+    .capabilities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+    }
+
+    .capability {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cap-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--cobalt-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cap-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--cobalt);
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cap-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.35;
+    }
+
+    /* CTA */
+    .cta-block {
+      background: var(--cobalt);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .cta-copy { color: #fff; }
+
+    .cta-heading {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .cta-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--cobalt);
+      background: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 100px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-ghost {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      background: transparent;
+      border: 0.5px solid rgba(255,255,255,0.3);
+      padding: 10px 20px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+
+    /* FOOTER */
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    footer a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--text-primary); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      main { padding: 2.5rem 1.25rem 4rem; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .stats .stat:last-child { grid-column: span 2; }
+      .cta-block { padding: 1.5rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project-card { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://parallelglobal.online" class="nav-logo">PARALLEL GLOBAL</a>
+    <ul class="nav-links">
+      <li><a href="https://parallelglobal.online/#about">About</a></li>
+      <li><a href="https://parallelglobal.online/#services">Services</a></li>
+      <li><a href="/portfolio.html" style="color:#0f0f0f;font-weight:500;">Work</a></li>
+    </ul>
+    <a href="https://parallelglobal.online/#contact" class="nav-cta">Start a project</a>
+  </nav>
+
+  <main>
+
+    <header class="page-header">
+      <p class="eyebrow">Our Work</p>
+      <h1 class="page-title">Work that <em>moves.</em></h1>
+      <p class="page-subtitle">Every project begins with a conversation and a challenge. We don't execute briefs blindly — we interrogate them until we find the angle that's genuinely right for the brand.</p>
+    </header>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">50K+</div>
+        <div class="stat-label">Monthly organic reach grown from 1,000</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Live brand & Shopify builds delivered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2+</div>
+        <div class="stat-label">Years building brands and stores</div>
+      </div>
+    </div>
+
+    <p class="section-label">Selected Projects</p>
+
+    <div class="project-grid">
+
+      <!-- ORVE -->
+      <a class="project-card" href="https://orve-official.com" target="_blank" rel="noopener">
+        <div class="card-visual orve-bg">
+          <div class="orve-inner">
+            <div class="orve-wordmark">ŌRVE</div>
+            <div class="orve-sub">Artisan Extrait de Parfum</div>
+          </div>
+          <span class="card-badge badge-dark">orve-official.com</span>
+        </div>
+        <div class="card-body">
+          <p class="card-client">ORVE Perfumes</p>
+          <h2 class="card-title">Full brand & Shopify store</h2>
+          <p class="card-desc">We built ORVE from the ground up — brand identity, Shopify store, product pages, hero video, a 30-day content calendar, and ongoing growth strategy. End-to-end engagement, still active.</p>
+          <div class="tag-row">
+            <span class="tag tag-blue">Shopify</span>
+            <span class="tag">Brand identity</span>
+            <span class="tag">Content strategy</span>
+            <span class="tag">Copywriting</span>
+          </div>
+          <span class="card-link">
+            Visit live site
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Parallel Global -->
+      <a class="project-card" href="https://parallelglobal.online" target="_blank" rel="noopener">
+        <div class="card-visual pg-bg">
+          <div class="pg-inner">
+            <div class="pg-wordmark">PARALLEL GLOBAL</div>
+            <div class="pg-tagline">Think Global. Move Parallel.</div>
+            <div class="pg-rule-row">
+              <div class="pg-rule" style="width:44px;opacity:0.5;"></div>
+              <div class="pg-rule" style="width:26px;opacity:0.22;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="card-client">Parallel Global</p>
+          <h2 class="card-title">Brand system & website</h2>
+          <p class="card-desc">Before we could help others find their direction, we found our own. We designed and built the full Parallel Global brand — guidelines, visual identity, website copy, and a live site on GitHub Pages.</p>
+          <div class="tag-row">
+            <span class="tag tag-blue">Web design</span>
+            <span class="tag">Brand system</span>
+            <span class="tag">Copywriting</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+          <span class="card-link">
+            Visit live site
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- 3D -->
+      <a class="project-card" href="https://instagram.com/itv.3d" target="_blank" rel="noopener">
+        <div class="card-visual td-bg">
+          <div class="td-rings">
+            <div class="td-ring-mid">
+              <div class="td-core"></div>
+            </div>
+          </div>
+          <span class="td-label">3D Product Visualization</span>
+          <span class="card-badge badge-dim">Blender · Cycles</span>
+        </div>
+        <div class="card-body">
+          <p class="card-client">itv.3d</p>
+          <h2 class="card-title">3D product visualization & animation</h2>
+          <p class="card-desc">We produce photorealistic 3D product renders and motion animations for e-commerce brands — built in Blender. The alternative to a photo shoot, built for hero sections, paid ads, and product launches.</p>
+          <div class="tag-row">
+            <span class="tag tag-blue">3D modeling</span>
+            <span class="tag">Product renders</span>
+            <span class="tag">Animation</span>
+            <span class="tag">Blender</span>
+          </div>
+          <span class="card-link">
+            View work on Instagram
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+
+    <hr class="divider" />
+
+    <p class="section-label">What we build</p>
+
+    <div class="capabilities">
+
+      <div class="capability">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+        </div>
+        <span class="cap-name">Shopify stores</span>
+      </div>
+
+      <div class="capability">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+        </div>
+        <span class="cap-name">Brand identity</span>
+      </div>
+
+      <div class="capability">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <span class="cap-name">Website design</span>
+      </div>
+
+      <div class="capability">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <span class="cap-name">Copywriting</span>
+      </div>
+
+      <div class="capability">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <span class="cap-name">Social media</span>
+      </div>
+
+      <div class="capability">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 4.5-9 4.5-9-4.5L12 3zM3 12l9 4.5 9-4.5M3 17l9 4.5 9-4.5"/></svg>
+        </div>
+        <span class="cap-name">3D visualization</span>
+      </div>
+
+      <div class="capability">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <span class="cap-name">3D animation</span>
+      </div>
+
+      <div class="capability">
+        <div class="cap-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <span class="cap-name">Growth strategy</span>
+      </div>
+
+    </div>
+
+    <div class="cta-block">
+      <div class="cta-copy">
+        <p class="cta-heading">Ready to build something?</p>
+        <p class="cta-sub">Shopify stores · Brand identity · Web design · 3D product visuals</p>
+      </div>
+      <div class="cta-actions">
+        <a href="mailto:qasim@parallelglobal.online" class="btn-primary">Start a project</a>
+        <a href="https://parallelglobal.online/#contact" class="btn-ghost">Get in touch</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://parallelglobal.online">Parallel Global</a> &nbsp;·&nbsp;
+      <a href="mailto:qasim@parallelglobal.online">qasim@parallelglobal.online</a> &nbsp;·&nbsp;
+      <a href="https://instagram.com/itv.3d" target="_blank" rel="noopener">itv.3d</a> &nbsp;·&nbsp;
+      <a href="https://linkedin.com/in/qasim-buzdar-098878243" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </footer>
+
+</body>
+</html>
